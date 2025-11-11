@@ -17,7 +17,11 @@ nltk.download('punkt')
 #nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 
-df = pd.read_csv(r"./Labelled Yelp Dataset.csv")
+# Testing dataset (original one)
+df = pd.read_csv(r"./fake reviews dataset.csv")
+
+# Large dataset used for testing originally (currently unavailable)
+# df = pd.read_csv(r"./Labelled Yelp Dataset.csv")  # 88% accuracy with this one 
 
 print("-"*20)
 
@@ -88,4 +92,5 @@ rec = recall_score(X, Y)
 print("-"*20)
 results = pd.DataFrame([['SVC', acc, f1, prec, rec]],
                         columns = ['Model', 'Accuracy', 'F1','Precision', 'Recall'])
+
 print(results)
